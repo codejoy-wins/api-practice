@@ -14,13 +14,20 @@
         // grab element by gettext and if it clicks run gettext()
 
         function getText(){
+            // fetch('sample.txt')
+            // .then(function(res){
+            //     return res.text();
+            // })
+            // .then(function(data){
+            //     console.log(data);
+            // })
+
             fetch('sample.txt')
-            .then(function(res){
-                return res.text();
+            .then((res)=> res.text())
+            .then((data)=> {
+                document.getElementById('output').innerHTML = data;
             })
-            .then(function(data){
-                console.log(data);
-            })
+            .catch((err)=>console.log(err));
         }
 
         // function output(msg){
