@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fetch API Sandbox Tutorial Follow</title>
+</head>
+<body>
+    <button id="getText">Get Text</button>
+    <div id="output">Output goes here</div>
+    <script>
+        document.getElementById('getText').addEventListener('click', getText);
+        // grab element by gettext and if it clicks run gettext()
+
+        function getText(){
+            fetch('sample.txt')
+            .then(function(res){
+                console.log(res.text());
+                output(res.url);
+            })
+        }
+
+        function output(msg){
+            var target = document.getElementById('output');
+            if(target){
+                target.innerHTML = msg;
+            }
+        }
+    </script>
+</body>
+</html>
